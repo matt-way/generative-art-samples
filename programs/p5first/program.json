@@ -1,0 +1,21 @@
+{
+  "control": {
+    "running": true,
+    "resetting": false
+  },
+  "blockInstances": [
+    {
+      "id": "p5-a7P_iy4xR",
+      "type": "p5",
+      "codeExpanded": true,
+      "memberOverrides": {
+        "OE197wvaf": {
+          "value": "0.809322033898305"
+        },
+        "SaONTY1eB": {
+          "value": "0.597457627118644"
+        }
+      }
+    }
+  ]
+}

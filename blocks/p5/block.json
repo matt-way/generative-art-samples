@@ -1,0 +1,19 @@
+{
+  "source": "code.js",
+  "members": [
+    {
+      "id": "OE197wvaf",
+      "stateKey": "x",
+      "type": "Slider",
+      "updateOnly": "false"
+    },
+    {
+      "id": "SaONTY1eB",
+      "stateKey": "y",
+      "type": "Slider",
+      "updateOnly": "false"
+    }
+  ],
+  "codeExpanded": true,
+  "path": "/media/matt/VolA/workspaces/generative-art-samples/blocks/p5"
+}

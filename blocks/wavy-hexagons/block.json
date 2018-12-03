@@ -1,0 +1,37 @@
+{
+  "source": "code.js",
+  "members": [
+    {
+      "id": "sZaaYA7SA",
+      "stateKey": "mnSize",
+      "type": "Slider",
+      "updateOnly": "false"
+    },
+    {
+      "id": "0nc0vd5QD",
+      "stateKey": "waveX",
+      "type": "Slider",
+      "updateOnly": "false"
+    },
+    {
+      "id": "CZ5MdU-zv",
+      "stateKey": "r",
+      "type": "Slider",
+      "updateOnly": "false"
+    },
+    {
+      "id": "sXVSkyl5n",
+      "stateKey": "strokeWidth",
+      "type": "Slider",
+      "updateOnly": "false"
+    },
+    {
+      "id": "1x7pSD-09",
+      "stateKey": "yella",
+      "type": "Color Picker",
+      "updateOnly": "false"
+    }
+  ],
+  "codeExpanded": true,
+  "path": "/media/matt/VolA/workspaces/generative-art-samples/blocks/wavy-hexagons"
+}

@@ -1,0 +1,36 @@
+{
+  "control": {
+    "running": true,
+    "resetting": false
+  },
+  "blockInstances": [
+    {
+      "id": "wavy-hexagons-8-IPzMLG9",
+      "type": "wavy-hexagons",
+      "codeExpanded": true,
+      "memberOverrides": {
+        "sZaaYA7SA": {
+          "value": "0.5"
+        },
+        "0nc0vd5QD": {
+          "value": "0.86"
+        },
+        "CZ5MdU-zv": {
+          "value": "0.48"
+        },
+        "sXVSkyl5n": {
+          "value": "0.14",
+          "link": "sinValue"
+        },
+        "1x7pSD-09": {
+          "value": "#f1ff4a"
+        }
+      }
+    },
+    {
+      "id": "sin-g4eUEhs0i",
+      "type": "sin",
+      "codeExpanded": true
+    }
+  ]
+}

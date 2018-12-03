@@ -1,0 +1,13 @@
+{
+  "control": {
+    "running": true,
+    "resetting": false
+  },
+  "blockInstances": [
+    {
+      "id": "arcs-Escj8T3R3",
+      "type": "arcs",
+      "codeExpanded": true
+    }
+  ]
+}

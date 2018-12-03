@@ -1,0 +1,13 @@
+{
+  "control": {
+    "running": true
+  },
+  "blockInstances": [
+    {
+      "id": "block-twCxyuukI-1-1HOC21ObC",
+      "type": "block-twCxyuukI-1",
+      "codeExpanded": true,
+      "memberOverrides": {}
+    }
+  ]
+}
