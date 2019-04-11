@@ -1,44 +1,42 @@
 import p5 from 'p5'
 
-export const run = (state, { domRoot, io }) => {
-  
-  io.width = domRoot.clientWidth
-  io.height = 500
-  
-  // setup sketch instance
-  io.p5 = new p5(s => {	
-  	io.s = s
-
-  	s.setup = function() {
-      const { CENTER, NORMAL, WEBGL } = s
+export const run = ({ state, element, events, iteration }) => {
+	state.width = element.clientWidth
+  state.height = 500
       
-	    s.createCanvas(io.width, io.height)
-    	s.noLoop()
+  new p5(s => {
+    state.s = s
+    
+    s.setup = () => {
+      const { CENTER, NORMAL } = s
+      
+      s.createCanvas(state.width, state.height)
+      s.noLoop()
       s.smooth()
       s.rectMode(CENTER)
       s.stroke(32)
   		s.noFill()  		
   		s.blendMode(NORMAL)
-	  }
-	}, domRoot)	
+    }
+  }, element)
 }
 
-export const update = (state, { io, timeRunning }) => {
-	const { s, width, height } = io 
-  const { TWO_PI, MULTIPLY } = s
+export const update = ({ state, element, events, iteration }) => {
+  const { s, width, height } = state
+	const { TWO_PI, MULTIPLY } = s
   
   const numFrames = 150
-  const t = (timeRunning/(20.0*numFrames))%1
+  const t = ((20 * iteration)/(20.0*numFrames))%1
   
-  const YELLA = io.yella, CYAN = '#4FDBFF', MAGENTA = '#F012BE'
-	const r = io.r * 420
-  const mn = .5 * s.sqrt(io.mnSize * 6)
+  const YELLA = state.yella, CYAN = '#4FDBFF', MAGENTA = '#F012BE'
+	const r = state.r * 420
+  const mn = .5 * s.sqrt(state.mnSize * 6)
   const ia = s.atan(s.sqrt(0.5))
   
   var wavePhase
      
   function waveVertex(x, y) {
-    s.vertex(x + (io.waveX * 30) * s.sin(TWO_PI * t - 0.03 * y + wavePhase), y)
+    s.vertex(x + (state.waveX * 30) * s.sin(TWO_PI * t - 0.03 * y + wavePhase), y)
   }
   
   function waveLine(x1, y1, x2, y2) {
@@ -74,7 +72,7 @@ export const update = (state, { io, timeRunning }) => {
   s.background(250)
   s.push()
   s.translate(width/2, height/2)
-  s.strokeWeight(io.strokeWidth * 3.5 * 4)
+  s.strokeWeight(state.strokeWidth * 3.5 * 4)
   
   s.background(250)
   s.stroke(CYAN)

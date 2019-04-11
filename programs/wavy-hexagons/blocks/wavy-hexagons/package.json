@@ -1,0 +1,57 @@
+{
+  "_from": "p5-template",
+  "_id": "p5-template@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-UpZDIYbUfWOwmYjYi/ugXKVSXts9KfOmP5N7CHcAS6SWKgvx1meAYz4RlqvgpYH+bwdrGNIDnsWW/MzP2tQXLA==",
+  "_location": "/p5-template",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "p5-template",
+    "name": "p5-template",
+    "escapedName": "p5-template",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/p5-template/-/p5-template-1.0.0.tgz",
+  "_shasum": "2da5c859b66943d644efb0a186e292a56098dfb2",
+  "_spec": "p5-template",
+  "_where": "/media/matt/VolA/memebig/projects/syntropy-studio",
+  "author": {
+    "name": "Matt Way"
+  },
+  "bugs": {
+    "url": "https://github.com/syntropy-studio-blocks/p5-template/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "p5": "^0.8.0"
+  },
+  "deprecated": false,
+  "description": "A block template for getting started with p5.js (for generative art)",
+  "homepage": "https://github.com/syntropy-studio-blocks/p5-template#readme",
+  "keywords": [
+    "syntropy-studio-block",
+    "p5",
+    "template",
+    "generative",
+    "art"
+  ],
+  "license": "MIT",
+  "main": "code.js",
+  "name": "p5-template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syntropy-studio-blocks/p5-template.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

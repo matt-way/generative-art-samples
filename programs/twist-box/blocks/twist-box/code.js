@@ -1,33 +1,31 @@
 import p5 from 'p5'
 
-export const run = (state, { domRoot, io }) => {
-  
-  io.width = domRoot.clientWidth
-  io.height = 500
-  
-  // setup sketch instance
-  io.p5 = new p5(s => {	
-  	io.s = s
-
-  	s.setup = function() {
-      const { CENTER, NORMAL, WEBGL } = s
+export const run = ({ state, element, events, iteration }) => {
+	const width = state.width = element.clientWidth
+  const height = state.height = 500
       
-	    s.createCanvas(io.width, io.height, WEBGL)
-    	s.noLoop()
+  new p5(s => {
+    state.s = s
+    
+    s.setup = () => {
+      const { CENTER, WEBGL } = s
+      
+      s.createCanvas(width, height, WEBGL)
+      s.noLoop()
       s.smooth(8)
       s.rectMode(CENTER)
       s.pixelDensity(2)
       s.noFill()
       s.stroke(255)
   		s.strokeWeight(2.5)
-  		s.ortho()
-	  }
-	}, domRoot)	
+  		s.ortho(-width/2, width/2, -height/2, height/2, -1000, 1000)
+    }
+  }, element)
 }
 
-export const update = (state, { io }) => {
-	const { s, width, height } = io 
-  const { HALF_PI, PI, TWO_PI } = s
+export const update = ({ state, element, events, iteration }) => {
+  const { s } = state
+	const { HALF_PI, PI, TWO_PI } = s
   
   const numFrames = 250
   const t = (s.millis()/(20.0*numFrames))%1
@@ -37,7 +35,7 @@ export const update = (state, { io }) => {
   
   const N = 240 // verts
   const l = 180 // length
-  const maxTwist = io.maxTwist * 40
+  const maxTwist = state.maxTwist * 40
   
   function ease(p, g) {
   	if (p < 0.5) {

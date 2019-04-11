@@ -1,0 +1,24 @@
+{
+  "name": "generative-art-samples",
+  "version": "1.0.0",
+  "description": "A set of generative art demos ported to Syntropy Studio",
+  "main": "index.js",
+  "dependencies": {
+    "markdown": "^0.5.0",
+    "p5": "^0.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-way/generative-art-samples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-way/generative-art-samples/issues"
+  },
+  "homepage": "https://github.com/matt-way/generative-art-samples#readme"
+}

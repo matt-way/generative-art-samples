@@ -1,0 +1,10 @@
+{
+  "source": "code.js",
+  "inputs": [],
+  "outputs": [
+    {
+      "id": "s",
+      "description": "The p5 sketch object that can be used to make calls."
+    }
+  ]
+}

@@ -1,19 +1,17 @@
 import p5 from 'p5'
 
-export const run = (state, { domRoot, io }) => {
-  
-  io.width = domRoot.clientWidth
-  io.height = 500
-  
-  // setup sketch instance
-  io.p5 = new p5(s => {	
-  	io.s = s
-
-  	s.setup = function() {
-      const { CENTER, NORMAL, WEBGL } = s
+export const run = ({ state, element, events, iteration }) => {
+	state.width = element.clientWidth
+  state.height = 500
       
-	    s.createCanvas(io.width, io.height, WEBGL)
-    	s.noLoop()
+  new p5(s => {
+    state.s = s
+    
+    s.setup = () => {
+      const { CENTER, WEBGL } = s
+      
+      s.createCanvas(state.width, state.height, WEBGL)
+      s.noLoop()
       s.smooth(8)
       s.rectMode(CENTER)
       s.pixelDensity(2)
@@ -23,15 +21,15 @@ export const run = (state, { domRoot, io }) => {
   		s.ortho()
       s.noFill()
     }
-	}, domRoot)	
+  }, element)
 }
 
-export const update = (state, { io, timeRunning }) => {
-	const { s, width, height } = io 
-  const { HALF_PI, PI, TWO_PI, QUARTER_PI, CLOSE } = s
+export const update = ({ state, element, events, iteration }) => {
+  const { s } = state
+	const { HALF_PI, TWO_PI, QUARTER_PI, CLOSE } = s
   
   const numFrames = 350
-  const t = (timeRunning/(20.0*numFrames))%1
+  const t = ((iteration * 50)/(20.0*numFrames))%1
   
   const mn = .5 * s.sqrt(3)
   const ia = s.atan(s.sqrt(0.5))

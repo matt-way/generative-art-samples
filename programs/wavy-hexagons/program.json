@@ -1,0 +1,24 @@
+{
+  "blockInstances": [
+    {
+      "id": "wavy-hexagons",
+      "inputValues": {
+        "mnSize": {
+          "value": "0.5"
+        },
+        "waveX": {
+          "value": "0.72"
+        },
+        "r": {
+          "value": "0.46"
+        },
+        "strokeWidth": {
+          "value": "0.34"
+        },
+        "yella": {
+          "value": "#4a4d19"
+        }
+      }
+    }
+  ]
+}

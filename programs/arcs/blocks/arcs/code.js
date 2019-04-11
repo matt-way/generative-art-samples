@@ -1,38 +1,35 @@
 import p5 from 'p5'
 
-export const run = (state, { domRoot, io }) => {
-  
-  io.width = domRoot.clientWidth
-  io.height = 500
-  
-  // setup sketch instance
-  io.p5 = new p5(s => {	
-  	io.s = s
-
-  	s.setup = function() {
-      const { CENTER, NORMAL, WEBGL } = s
+export const run = ({ state, element, events, iteration }) => {
+	state.width = element.clientWidth
+  state.height = 500
       
-	    s.createCanvas(io.width, io.height, WEBGL)
-    	s.noLoop()
+  new p5(s => {
+    state.s = s
+    
+    s.setup = () => {
+      const { CENTER } = s
+      
+      s.createCanvas(state.width, state.height)
+      s.noLoop()
       s.smooth(8)
       s.rectMode(CENTER)
-      s.fill(10);
-      s.noStroke()  		
+      s.fill(10)
+      s.noStroke()
     }
-	}, domRoot)	
+  }, element)
 }
 
-export const update = (state, { io, timeRunning, iteration }) => {
-	const { s, width, height } = io 
-  const { HALF_PI, PI, TWO_PI, QUARTER_PI, CLOSE } = s
-  
-  const numFrames = 160
-  const samplesPerFrame = 4
+export const update = ({ state, element, events, iteration }) => {
+  const { s, width } = state
+	const { HALF_PI, PI, TWO_PI, CLOSE } = s
+    
+  const numFrames = 200
+  const samplesPerFrame = 2
 	const shutterAngle = 1
   var t = s.map(iteration % numFrames, 0, numFrames, 0, 1)
-  console.log(t)
-  
-  const mn = .5 * s.sqrt(3)
+    
+  const mn = 0.5 * s.sqrt(3)
   const ia = s.atan(s.sqrt(0.5))
   
 	var x, y, z, tt
@@ -58,8 +55,9 @@ export const update = (state, { io, timeRunning, iteration }) => {
   	s.push()
   	s.fill(ORANGE)
   	s.beginShape()
-  	for (var i=0; i<3; i++)
-    	s.vertex(r*s.sin(TWO_PI*i/3), -r*s.cos(TWO_PI*i/3));
+  	for (var i=0; i<3; i++) {
+    	s.vertex(r*s.sin(TWO_PI*i/3), -r*s.cos(TWO_PI*i/3))
+    }
   	s.endShape(CLOSE)
   	s.pop()
 	}
@@ -80,10 +78,11 @@ export const update = (state, { io, timeRunning, iteration }) => {
     t = 2*t
     for (var i=-N; i<=N; i++) {
       for (var j=-N; j<=N; j++) {
-        x = i*sp;
-        y = j*mn*sp;
-        if (j%2 != 0)
-          x += .5*sp;
+        x = i*sp
+        y = j*mn*sp
+        if (j%2 != 0) {
+          x += .5*sp
+        }
         tt = c01(v*t - s.map(-y, -width*.55, width*.55, 0, v-1))
         te = ease(tt, ee)
         s.push()
@@ -94,10 +93,8 @@ export const update = (state, { io, timeRunning, iteration }) => {
         s.pop()
       }
     }
-  }
-  
-  else {
-    t = 2*t - 1;
+  } else {
+    t = 2*t - 1
     s.fill(10)
     for (var i=-N; i<=N; i++) {
       for (var j=-N; j<=N; j++) {
@@ -111,7 +108,6 @@ export const update = (state, { io, timeRunning, iteration }) => {
         s.pop()
       }
     }
-
 
     for (var i=-N; i<=N; i++) {
       for (var j=-N; j<=N; j++) {

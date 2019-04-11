@@ -1,0 +1,36 @@
+{
+  "source": "code.js",
+  "inputs": [
+    {
+      "id": "mnSize",
+      "type": "slider",
+      "updateOnly": true
+    },
+    {
+      "id": "waveX",
+      "type": "slider",
+      "updateOnly": true
+    },
+    {
+      "id": "r",
+      "type": "slider",
+      "updateOnly": true
+    },
+    {
+      "id": "strokeWidth",
+      "type": "slider",
+      "updateOnly": true
+    },
+    {
+      "id": "yella",
+      "type": "colorPicker",
+      "updateOnly": true
+    }
+  ],
+  "outputs": [
+    {
+      "id": "s",
+      "description": "The p5 sketch object that can be used to make calls."
+    }
+  ]
+}

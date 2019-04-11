@@ -1,0 +1,12 @@
+{
+  "blockInstances": [
+    {
+      "id": "twist-box",
+      "inputValues": {
+        "maxTwist": {
+          "value": "0.18"
+        }
+      }
+    }
+  ]
+}
